@@ -5,15 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JS-DOM-1 Exercise 1</title>
   </head>
-  <body>
+  <body onload="notify()">
     <h1>JS-DOM-1 Exercise 1</h1>
-    <button onClick="alertMe()">Alert me</button>
+    <button onclick="alertMe()">Alert me</button>
+    <button onclick="test()">Test</button>
+    <button onclick="work()" >Work</button>
   </body>
   <script type="text/javascript">
     // code here
-
+    const alertMe = () => {
+      alert('Data is loading, please wait 3 seconds.');
+      console.log('Data is loading, please wait 3 seconds.');
+    };
     const notify = () => {
       // code here
+      alert('Page is loading!');
+      console.log('Page is loading!');
+    };
+    const test = () => {
+      alert('Are you ready to work');
+      console.log(['Are you ready to work'])
+    };
+    const work = () => {
+      // prompt('whick job? Do you like to work', 'Tell me');
+      console.log(prompt('whick job? Do you like to work', 'Tell me'));
     };
   </script>
 </html>
