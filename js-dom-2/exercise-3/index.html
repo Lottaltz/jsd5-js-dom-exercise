@@ -12,8 +12,8 @@
     <input id="email" type="text" placeholder="Email" />
     <button onClick="createHTML()">Submit</button>
 
-    <h1></h1>
-    <ul></ul>
+    <h1 id="fullname-display"></h1>
+    <ul id="info-list"></ul>
   </body>
   <script type="text/javascript">
     const createHTML = () => {
@@ -22,7 +22,11 @@
       const age = document.querySelector("#age");
       const email = document.querySelector("#email");
 
-      // write your code here.
+      const fullnameD = document.querySelector("#fullname-display");
+      fullnameD.innerHTML = fullname.value;
+      const infolist = document.querySelector("#info-list");
+      infolist.innerHTML = `<li>${nickname.value}</li><li>${age.value}</li><li>${email.value}</li>`;
+
     };
   </script>
 </html>
