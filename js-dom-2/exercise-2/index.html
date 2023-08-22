@@ -8,17 +8,16 @@
   <body>
     <input id="fullname" type="text" placeholder="Full Name" />
     <input id="nickname" type="text" placeholder="NickName" />
-    <button onClick="createHTML()">Submit</button>
+    <button onclick="createHTML()">Submit</button>
     <ul></ul>
   </body>
   <script type="text/javascript">
     const createHTML = () => {
-      const fullname = document.querySelector("#fullname");
-      const nickname = document.querySelector("#nickname");
+      const fullname = document.querySelector("#fullname").value;
+      const nickname = document.querySelector("#nickname").value;
 
-      // select ul first here
-      const dive = document.querySelector("....");
-      dive.innerHTML = // code here
+      const dive = document.querySelector("ul");
+      dive.innerHTML = "<li>" + fullname + "</li>" + "<li>" + nickname + "</li>";
     };
   </script>
 </html>
