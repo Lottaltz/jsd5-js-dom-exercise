@@ -1,47 +1,93 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mini Project 1</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <div style="display: flex; flex-direction: column; padding: 12px">
-      <div class="id-card" id="idCard">
-        <div class="photo"></div>
-        <div class="info">
-          <h2 id="name">John Doe</h2>
-          <p>Date of Birth: <span id="dob">01/15/1990</span></p>
-          <p>Expiration Date: <span id="expiration">01/15/2030</span></p>
-          <p>License No: <span id="license">123456789</span></p>
-          <p>State: <span id="state">CA</span></p>
-        </div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Project JavaScript</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>Driver's License</h1>
+      <div class="profile-picture">
+      <img id="profile-image" src="loyd.png" alt="Profile Picture">
       </div>
+      <h2 id="profile-name"></h2>
+    
+      <p>Date of Birth: <span id="birth-date"></span></p>
+      <p>Expiration Date: <span id="exp-date"></span></p>
+      <p>License Number: <span id="license"></span></p>
+      <p>State: <span id="state-city"></span></p>
+    
+  </div>
 
-      <div class="edit-form">
-        <h2>Edit ID Card Data</h2>
-        <label for="nameInput">Name:</label>
-        <input type="text" id="nameInput" name="name" />
-
-        <label for="dobInput">Date of Birth:</label>
-        <input type="date" id="dobInput" name="dob" />
-
-        <label for="expirationInput">Expiration Date:</label>
-        <input type="date" id="expirationInput" name="expiration" />
-
-        <label for="licenseInput">License No:</label>
-        <input type="text" id="licenseInput" name="license" />
-
-        <label for="stateInput">State:</label>
-        <input type="text" id="stateInput" name="state" />
-
-        <button type="button" id="updateButton" onClick="updateData()">
-          Update
-        </button>
-      </div>
+  <div class="fieldset">
+    <h2>Edit ID Card Data </h2>
+    <div class="inp">
+      <label for="name">Name: </label>
+      <input type="text" name="name" id="person" placeholder="Type your name">
     </div>
+    
+    <div class="inp" >
+      <label for="birthdate">Date of Birth:</label>
+      <input type="date" id="birthdate" name="birthdate">
+    </div>  
+    
+    <div class="inp">
+     <label for="expiration-date">Expiration Date:</label>
+      <input type="date" id="expiration-date" name="expiration-date">
+    </div>
+    
+    <div class="inp">
+      <label for="state">License Number: </label>
+      <input type="text" name="license-no" id="license-no" placeholder="Type your license number">
+    </div>
+    
+    <div class="inp">
+      <label for="state">State: </label>
+      <input type="text" name="state" id="state" placeholder="Type your state">
+    </div>
+    <!-- input for change image -->
+    <div class="inp">
+      <label for="image">Image Upload: </label>
+      <input type="text" name="image" id="image" placeholder="Type image URL">
+     </div>
+    <div class="click">
+    <button id="update" onclick="updateData()">Update</button>
+    </div>
+  </div>
 
-    <script></script>
-  </body>
+
+  <script>
+      const updateData = () => {
+        const name = document.querySelector('#person').value;
+        const cardName = document.querySelector('#profile-name');
+        cardName.innerText = name;
+
+        const birth = document.querySelector('#birthdate').value;
+        const birthDate = document.querySelector('#birth-date');
+        birthDate.innerText = birth;
+
+        const exp = document.querySelector('#expiration-date').value;
+        const expDate = document.querySelector('#exp-date');
+        expDate.innerText = exp;
+
+        const license = document.querySelector('#license-no').value;
+        const licensenumber = document.querySelector('#license');
+        licensenumber.innerText = license;
+
+        const city = document.querySelector('#state').value;
+        const stateCity = document.querySelector('#state-city');
+        stateCity.innerText = city;
+
+        const imageUrl = document.querySelector('#image');
+        const imageChangeUrl = document.querySelector('#profile-image');
+        imageChangeUrl.setAttribute('src',imageUrl.value);
+
+      
+      }
+    
+  </script>
+</body>
 </html>
