@@ -2,6 +2,48 @@
 <html>
   <head>
     <title>JS-DOM-3 Exercise 2</title>
+    <style>
+      .card-box{
+        background-color: #7fffd4;
+        width: 200px;
+        height: 220px;
+        display: grid;
+        place-items: center;
+        margin-top: 2.5rem;
+        margin-left: 1.5rem;
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px #5fbf9f;
+        padding: 12px;
+      }
+      #fullname-display{
+        width: 110px;
+        height: 20px;
+        background-color: white;
+        margin: 0;
+        padding: 8px;
+        border-radius: 20px;
+        border: 1px solid rgb(1, 182, 112);
+        text-align: center;
+        color: #106a4c;
+        font-weight: bold;
+      }
+      #nickname-display{
+        width: 110px;
+        height: 20px;
+        background-color: white;
+        margin: 0;
+        padding: 8px;
+        border-radius: 20px;
+        border: 1px solid rgb(1, 182, 112);
+        text-align: center;
+        color: #106a4c;
+        font-weight: bold;
+      }
+      h3{
+        margin: 0;
+      }
+
+    </style>
   </head>
   <body>
     <input
@@ -17,21 +59,28 @@
       onChange="nickNameType(event)"
       placeholder="Type something"
     />
-
+    <div class="card-box">
     <h3>Fullname:</h3>
     <div id="fullname-display"></div>
     <h3>Nickname:</h3>
     <div id="nickname-display"></div>
+    </div>
 
     <script>
-      const textDiv = document.querySelector("#textDiv");
+      // const textDiv = document.querySelector("#card-box");
 
       function fullNameType(event) {
-        // write code here
+        const fullname = event.target.value;
+        // alert(fullname);
+        const showFullname = document.querySelector('#fullname-display');
+        showFullname.innerText = fullname;
       }
 
       function nickNameType(event) {
-        // write code here
+        const nickname = event.target.value;
+        // alert(nickname);
+        const showNickname = document.querySelector('#nickname-display');
+        showNickname.innerText = nickname;
       }
     </script>
   </body>

@@ -4,14 +4,29 @@
     <title>JS-DOM-3 Exercise 1</title>
   </head>
   <body>
-    <select id="mySelect" onChange="s(event)">
+    <select id="mySelect" onChange="change(event)">
       <option value="programmer">Programmer</option>
       <option value="doctor">Doctor</option>
       <option value="creator">Creator</option>
     </select>
 
     <script>
-      // write your function here.
+      // // Solution 1 (most popular to use)
+      const change = (event) => {
+        alert(event.target.value);
+        console.log(event.target.value);
+      };
+
+      // event.target = document.querySelector (do the same thing) (both can use .value)
+      // event is a parameter of change function which it cloud be any name.
+      // onchange event is used when we want to collect data from the same element when it changes
+
+      // Solution 2
+      // const mySelect =  document.querySelector('#mySelect');
+      // const change = () => {
+      //   alert(mySelect.value);
+      //   console.log(mySelect.value);
+      // };
     </script>
   </body>
 </html>
