@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Project 2</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+    </style>
+</head>
+<body >
+    <div id="data-form" >
+        <form >
+        <h2 align="center">Enter Data</h2>
+        <div class="inp">
+            <label for="name">Name: </label>
+            <input type="text" name="name" id="name" class="input-data" placeholder="Type your name">
+        
+            <label for="age">Age: </label>
+            <input type="number" name="age" id="age" class="input-data" placeholder="Type your age">
+              
+            <label for="weight">Weight: </label>
+            <input type="number" name="weight" id="weight" class="input-data" placeholder="Type your weight">
+                
+            <label for="time">Current Running(minutes): </label>
+            <input type="number" id="time" name="time" placeholder="Type your time" min="0" max="100" step="1">
+         </div>
+        </form>
+        <button onclick="enterData()">Add Data</button>
+    </div>
+
+    <div class="user-data">
+        <table style="border: 1px solid black" align="center">
+            <caption>Entered Data</caption>
+            <thead>
+                <th class="th-title">Name</th>
+                <th class="th-title">Age</th>
+                <th class="th-title">Weight</th>
+                <th>Current Running(minutes)</th>
+                <th>Good Running</th>
+            </thead>
+            <tbody  id="table-body">
+                
+            </tbody>
+        </table>
+    </div>
+    <script >
+        function enterData() {
+            const name = document.querySelector('#name');
+            const age = document.querySelector('#age');
+            const weight = document.querySelector('#weight');
+            const time = document.querySelector('#time');
+            // console.log(name,age,weight,time);
+            const runningTime = parseInt(time.value);
+            let runningStatus;
+            if (runningTime >= 0 && runningTime <= 30){
+                runningStatus = 'Good';
+            }else if (runningTime >= 31 && runningTime <= 60){
+                runningStatus = 'Balance';
+            }else if (runningTime > 60){
+                runningStatus = 'Extreme';
+            }else{
+                runningStatus = 'Error';
+            }
+
+
+            const addDataRow = document.querySelector('#table-body');
+            addDataRow.innerHTML += `<tr>
+                <td>${name.value}</td>
+                <td>${age.value}</td>
+                <td>${weight.value}</td>
+                <td>${time.value}</td> 
+                <td>${runningStatus}</td>
+                </tr>`;
+        }
+
+
+        // const getData = document.querySelectorAll('.input-data');
+        // const addDataRow = document.querySelector('#table-body');
+        // const enterData = () => {
+        //     for (let i = 0; i < getData.length; i++) {
+        //     // console.log(getData[i].value);
+        //         addDataRow.innerHTML += `<tr><td>${getData[i].value}</td></tr>`;
+        //     }
+        // }
+    </script>
+</body>
+</html>

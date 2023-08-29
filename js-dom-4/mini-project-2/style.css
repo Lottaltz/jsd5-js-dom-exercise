@@ -1,0 +1,60 @@
+html{
+    height: 100%;
+}
+body{
+    width: 1000px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(to top, #f43b47 0%, #453a94 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h2{
+    font-size: 1.75rem;
+    margin-bottom: 0;
+}
+#data-form{
+    border: 1px solid white;
+    width: 500px;
+    height: 300px;
+    padding: 24px;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.inp{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.inp input, label{
+    margin-top: 5px;
+}
+button{
+    margin-top: 10px;
+    padding: 6px 10px;
+}
+th{
+    border: 1px solid black;
+}
+td{
+    border: 1px solid black;
+}
+.th-title{
+    width: 80px;
+}
+.user-data{
+    background-color: white;
+    margin-top: 2rem;
+    padding: 1.25rem;
+    border-radius: 10px;
+}
+caption{
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
