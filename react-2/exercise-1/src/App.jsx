@@ -23,6 +23,7 @@ function App() {
       running: 12,
       status: "Good",
     },
+    
   ];
 
   return (
@@ -63,7 +64,11 @@ const RunningForm = () => {
 };
 
 const TableDisplay = (props) => {
+<<<<<<< HEAD
   const dataTable = props.data
+=======
+  const dataMember = props.data;
+>>>>>>> origin/main
   return (
     <>
       <h1>Entered Data</h1>
@@ -77,13 +82,18 @@ const TableDisplay = (props) => {
             <th>Good Running</th>
           </tr>
         </thead>
+<<<<<<< HEAD
         <TableBody tableData = {dataTable}/>
+=======
+        <TableBody tableData = {dataMember}/>
+>>>>>>> origin/main
       </table>
     </>
   );
 };
 
 const TableBody = (props) => {
+<<<<<<< HEAD
   const bodyData = props.tableData
   return (
     bodyData.map(item => {
@@ -97,6 +107,23 @@ const TableBody = (props) => {
             <td>{item.status}</td>
           </tr>
         </tbody>
+=======
+  const members = props.tableData;
+  return (
+    members.map((item) => {
+      return (
+        <>
+        <tbody>
+        <tr>
+        <td>{item.name}</td>
+        <td>{item.age}</td>
+        <td>{item.weight}</td>
+        <td>{item.running}</td>
+        <td>{item.status}</td>
+        </tr>
+        </tbody>
+        </>
+>>>>>>> origin/main
       )
     })
   )
