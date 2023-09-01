@@ -54,12 +54,12 @@ const PostContainer = () => {
   );
 };
 
-const FeedSection = (feed) => {
-  const feedPost = feed.feedData
+const FeedSection = ({feedData}) => {
+  // const feedPost = feed.feedData
   return (
-    feedPost.map(item => {
+    <div className="feed">
+    {feedData.map(item => {
         return (
-          <div className="feed">
           <Post
             author={item.author}
             avatar={item.avatar}
@@ -67,10 +67,9 @@ const FeedSection = (feed) => {
             content={item.content}
             image={item.image}
           />
-          </div>
         )
-      })
-  );
+      })}
+  </div>);
 };
 
 const Post = ({author,avatar,time,content,image}) => {
