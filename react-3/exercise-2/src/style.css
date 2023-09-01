@@ -1,0 +1,30 @@
+body{
+    background-color: rgb(0, 182, 103);
+    display: grid;
+    place-items: center;
+}
+#container{
+    background-color: white;
+    width: 500px;
+    height: 500px;
+    display: grid;
+    place-items: center;
+    border-radius: 20px;
+    box-shadow: 5px 5px 4px rgba(47, 142, 96, 0.894);
+}
+img{
+    border-radius: 20px;
+    box-shadow: 2px 4px 10px rgb(193, 205, 205) ;
+}
+#get-input{
+    width: 320px;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: beige;
+    height: 50px;
+    align-items: center;
+}
+input{
+    width: auto;
+    height: 1.25rem;
+}
