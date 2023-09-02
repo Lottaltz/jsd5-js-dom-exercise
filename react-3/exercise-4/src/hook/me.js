@@ -17,7 +17,7 @@ const users = [
 ];
 
 const getUser = () => {
-  const index = Math.floor(Math.random() * 3);
+  const index = Math.floor(Math.random() * 4);
   return users[index];
 };
 

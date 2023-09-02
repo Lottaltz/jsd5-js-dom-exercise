@@ -12,12 +12,7 @@ function App() {
     let time = new Date().toDateString(); // generate timestamp here by (new Date().toDateString())
     const user = getUser();
     let data = {
-      id:id,
-      author:user.author,
-      avatar:user.avatar,
-      time:time,
-      content:content,
-      image:image
+      
     };
     create(data);
   };
@@ -25,19 +20,14 @@ function App() {
   return (
     <div id="app">
       <h1>Enter Data</h1>
-      <PostContainer create = {createPost}/>
+      <PostContainer />
       <FeedSection posts={posts} removeHandler={remove} />
     </div>
   );
 }
 
-const PostContainer = ({create}) => {
-  const [content, setContent] = useState();
-  const [image,setImage] = useState();
-
-  const createNewPost = () => {
-    create(content,image);
-  }
+const PostContainer = () => {
+  
   
   return (
     <div className="post-container">
@@ -49,12 +39,12 @@ const PostContainer = ({create}) => {
         <textarea
           className="post-input"
           placeholder="What's on your mind?"
-          onChange={(e) => setContent(e.target.value)}
+          
         ></textarea>
-        <input type="text" name="url" id="url-image" placeholder="Press image url" onChange={(e) => setImage(e.target.value)} />
+        <input type="text" name="url" id="url-image" placeholder="Press image url"  />
       </div>
       <div className="post-actions">
-        <button className="post-button" onClick={createNewPost} >Post</button>
+        <button className="post-button" >Post</button>
       </div>
     </div>
   );
@@ -64,16 +54,15 @@ const FeedSection = ({ posts, removeHandler }) => {
   return (
     <div className="feed">
       {posts.map((post) => (
-        <Post {...post}/>
-        // <Post
-        //   id={post.id}
-        //   author={post.author}
-        //   avatar={post.avatar}
-        //   time={post.time}
-        //   content={post.content}
-        //   image={post.image}
-        //   removeHandler={removeHandler}
-        // />
+        <Post
+          id={post.id}
+          author={post.author}
+          avatar={post.avatar}
+          time={post.time}
+          content={post.content}
+          image={post.image}
+          removeHandler={removeHandler}
+        />
       ))}
     </div>
   );
@@ -81,7 +70,7 @@ const FeedSection = ({ posts, removeHandler }) => {
 
 const Post = ({ id, author, avatar, time, content, image, removeHandler }) => {
   return (
-    <div className="post" id={id}>
+    <div className="post">
       <div className="post-header">
         <img className="post-avatar" src={avatar} alt="User 3" />
         <div>
