@@ -1,6 +1,10 @@
 import { useState } from "react";
 
+<<<<<<< HEAD
 const KEYS = ["id","author", "avatar", "time", "content", "image"];
+=======
+const KEYS = ["id", "author", "avatar", "time", "content", "image"];
+>>>>>>> upstream/main
 
 const postsData = [
   {
