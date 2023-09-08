@@ -1,4 +1,9 @@
+import { useContext } from "react";
 import "./App.css";
+import { createContext } from "react";
+import { useState } from "react";
+
+const PostData = createContext({});
 
 function App() {
   const posts = [
@@ -30,12 +35,16 @@ function App() {
         "https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvcm00NTYtMDA3YS5wbmc.png",
     },
   ];
+ 
+  const [post,setPost] = useState(posts);
 
   return (
     <div id="app">
       <h1>Enter Data</h1>
+      <PostData.Provider value={{post,setPost}}>
       <PostContainer />
-      <FeedSection postData={posts} />
+      <FeedSection />
+      </PostData.Provider>
     </div>
   );
 }
@@ -44,7 +53,7 @@ const PostContainer = () => {
   return (
     <div className="post-container">
       <div className="post-header">
-        <img className="post-avatar" src="avatar.jpg" alt="Your Avatar" />
+        <img className="post-avatar" src="" alt="Your Avatar" />
         <div className="post-author">You</div>
       </div>
       <div className="post-content">
@@ -60,17 +69,18 @@ const PostContainer = () => {
   );
 };
 
-const FeedSection = ({ postData }) => {
+const FeedSection = () => { 
+  const {post} = useContext(PostData);
   return (
     <div className="feed">
-      {postData.map((post) => {
+      {post.map((item) => {
         return (
-          <Post
-            author={post.author}
-            avatar={post.avatar}
-            time={post.time}
-            content={post.content}
-            image={post.image}
+          <Post {...item}
+            // author={item.author}
+            // avatar={item.avatar}
+            // time={item.time}
+            // content={item.content}
+            // image={item.image}
           />
         );
       })}
@@ -78,8 +88,8 @@ const FeedSection = ({ postData }) => {
   );
 };
 
-const Post = (props) => {
-  const { author, avatar, time, content, image } = props;
+const Post = ({author,avatar,time,image,content}) => {
+ 
   return (
     <div className="post">
       <div className="post-header">

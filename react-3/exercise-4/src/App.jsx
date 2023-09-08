@@ -60,7 +60,7 @@ const PostContainer = ({create}) => {
   );
 };
 
-const FeedSection = ({ posts, removeHandler }) => {
+const FeedSection = ({ posts }) => {
   return (
     <div className="feed">
       {posts.map((post) => (
